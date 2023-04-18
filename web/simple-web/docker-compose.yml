@@ -8,7 +8,7 @@ services:
     expose:
       - ${PORT}
     ports:
-      - ${PORT}:80
+      - ${PORT}:${INTERNAL_PORT:-80}
     healthcheck:
       test: ["CMD-SHELL", "curl --fail http://localhost:80/"]
       interval: 3s
